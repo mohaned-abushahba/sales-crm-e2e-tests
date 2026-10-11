@@ -1,9 +1,12 @@
 import { chromium, type FullConfig } from '@playwright/test';
 import * as dotenv from 'dotenv';
+import { mkdirSync, writeFileSync } from 'node:fs';
 
 dotenv.config({ path: `./${process.env.E2E_ENV_FILE ?? '.env'}`, override: true });
 
 export default async function globalSetup(config: FullConfig) {
+  mkdirSync('./results', { recursive: true });
+  writeFileSync('./results/drift-findings.jsonl', '');
   const baseURL = process.env.SERVICENOW_INSTANCE_URL;
   const username = process.env.SERVICENOW_USERNAME;
   const password = process.env.SERVICENOW_PASSWORD;

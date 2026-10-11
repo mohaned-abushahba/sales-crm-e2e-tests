@@ -15,6 +15,7 @@ export default defineConfig({
     ? [['html', { open: 'never' }], ['junit', { outputFile: 'results/junit.xml' }]]
     : [['html', { open: 'never' }], ['list']],
   globalSetup: './global-setup.ts',
+  globalTeardown: './global-teardown.ts',
   outputDir: './results/artifacts',
   use: {
     baseURL,

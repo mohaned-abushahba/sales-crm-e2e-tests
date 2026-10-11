@@ -1,0 +1,277 @@
+# Config drift — opmsalescrmstage (2026-10-11)
+
+Update sets checked: 20 · records: 1048 · not checkable: 8
+Source instance for layer 2: .env
+
+| Finding | Count |
+|---|---|
+| missing-on-target | 1 |
+| field-mismatch | 35 |
+| changed-after-capture | 0 |
+| uncaptured-missing-on-target | 167 |
+| unreadable-table | 3 |
+
+## missing-on-target
+
+- `sys_ui_section` 3f4b8d884fd862107596e9b058c7140f — sys_ui_section_3f4b8d884fd862107596e9b058c7140f (UPDATE-014-partner-segmentation.xml)
+
+## field-mismatch
+
+- `sp_portal` f264dbaccbfd52108d3f6a6fc041e4b5 — sp_portal_f264dbaccbfd52108d3f6a6fc041e4b5 (UPDATE-003-enable-business-portal.xml)
+  - `logo`: captured `7818298cffd82210aa38fffffffffff7` vs target `f8477d1c3b8f0310d5260fa693e45a9e`
+  - `logo_alt_text`: captured `` vs target `Business Portal`
+- `sys_dictionary` cf7957163bf6c310d5260fa693e45aa8 — customer_account.industry (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `` vs target `edge_encryption_enabled=true`
+- `sys_dictionary` b36e195c2b8f4b104deaf02ac891bf02 — customer_account (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `` vs target `edge_encryption_enabled=true`
+- `sys_dictionary` 3a9f5d102bcf4b104deaf02ac891bfbc — customer_account (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `` vs target `edge_encryption_enabled=true`
+- `sys_dictionary` 7ba011662bc307504deaf02ac891bf9d — sn_ind_tmt_orm_order (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `` vs target `edge_encryption_enabled=true,encode_utf8=false`
+- `sys_dictionary` 997b2c6e2bfac3104deaf02ac891bfb6 — sn_opty_mgmt_core_opportunity_competitor.company (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `encode_utf8=false,readonly_clickthrough=true` vs target `edge_encryption_enabled=true,encode_utf8=false,readonly_clickthrough=true`
+- `sys_dictionary` 259b7d183b034310d5260fa693e45a45 — sn_csm_pricing_import_data_source (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `import_attribute_name=data` vs target `edge_encryption_enabled=true,import_attribute_name=data`
+- `sys_dictionary` fc0439d03b0f0310d5260fa693e45a76 — sn_prd_pm_catalog_import (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `import_attribute_name=Data` vs target `edge_encryption_enabled=true,import_attribute_name=Data`
+- `sys_dictionary` 03c1a9982bcf4b104deaf02ac891bfb7 — customer_account (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `attributes`: captured `` vs target `edge_encryption_enabled=true`
+- `sys_db_object` 699b3d183b034310d5260fa693e45aed — sn_csm_pricing_import_data_source (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `super_class`: captured `672c8e4a2b3203104deaf02ac891bfcd` vs target `debbae793b230310916b37f726e45a70`
+- `sys_db_object` 680439d03b0f0310d5260fa693e45a1d — sn_prd_pm_catalog_import (UPDATE-004-crm-custom-fields-and-choices.xml)
+  - `super_class`: captured `672c8e4a2b3203104deaf02ac891bfcd` vs target `debbae793b230310916b37f726e45a70`
+- `sn_decision_table_decision_condition` 348f14bf2bfec3104deaf02ac891bf84 — sn_decision_table_decision_condition_348f14bf2bfec3104deaf02ac891bf84 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `c328af9e2bfa83104deaf02ac891bf92` vs target `49252cb63ba34b10916b37f726e45a21`
+- `sn_decision_table_decision_condition` 44c07e662b8347504deaf02ac891bf78 — sn_decision_table_decision_condition_44c07e662b8347504deaf02ac891bf78 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `ba7957163bf6c310d5260fa693e45a38` vs target `4c0528763ba34b10916b37f726e45ab7`
+- `sn_decision_table_decision_condition` 4b7f10bf2bfec3104deaf02ac891bfdb — sn_decision_table_decision_condition_4b7f10bf2bfec3104deaf02ac891bfdb (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `62286f9e2bfa83104deaf02ac891bf0f` vs target `f425e8b63ba34b10916b37f726e45a20`
+- `sn_decision_table_decision_condition` 74ad3d262b8b07504deaf02ac891bf87 — sn_decision_table_decision_condition_74ad3d262b8b07504deaf02ac891bf87 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `c328af9e2bfa83104deaf02ac891bf92` vs target `49252cb63ba34b10916b37f726e45a21`
+- `sn_decision_table_decision_condition` 74ad3d262b8b07504deaf02ac891bfc1 — sn_decision_table_decision_condition_74ad3d262b8b07504deaf02ac891bfc1 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `62286f9e2bfa83104deaf02ac891bf0f` vs target `f425e8b63ba34b10916b37f726e45a20`
+- `sn_decision_table_decision_condition` 81dd481c2b9f8f104deaf02ac891bfd3 — sn_decision_table_decision_condition_81dd481c2b9f8f104deaf02ac891bfd3 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `224ee0ae3bfe8710d5260fa693e45a56` vs target `d458b0ba3b6f4b10916b37f726e45a8b`
+- `sn_decision_table_decision_condition` 877f10bf2bfec3104deaf02ac891bfe1 — sn_decision_table_decision_condition_877f10bf2bfec3104deaf02ac891bfe1 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `ba7957163bf6c310d5260fa693e45a38` vs target `4c0528763ba34b10916b37f726e45ab7`
+- `sn_decision_table_decision_condition` 883d88982b9f8f104deaf02ac891bfe6 — sn_decision_table_decision_condition_883d88982b9f8f104deaf02ac891bfe6 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `ba7957163bf6c310d5260fa693e45a38` vs target `4c0528763ba34b10916b37f726e45ab7`
+- `sn_decision_table_decision_condition` b0ad3d262b8b07504deaf02ac891bfb5 — sn_decision_table_decision_condition_b0ad3d262b8b07504deaf02ac891bfb5 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `ba7957163bf6c310d5260fa693e45a38` vs target `4c0528763ba34b10916b37f726e45ab7`
+- `sn_decision_table_decision_condition` f7f07aa62b8347504deaf02ac891bf53 — sn_decision_table_decision_condition_f7f07aa62b8347504deaf02ac891bf53 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `224ee0ae3bfe8710d5260fa693e45a56` vs target `d458b0ba3b6f4b10916b37f726e45a8b`
+- `sn_decision_table_decision_condition` 1754faa63b8f4750d5260fa693e45a51 — sn_decision_table_decision_condition_1754faa63b8f4750d5260fa693e45a51 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `224ee0ae3bfe8710d5260fa693e45a56` vs target `d458b0ba3b6f4b10916b37f726e45a8b`
+- `sn_decision_table_decision_condition` 2224ba663b8f4750d5260fa693e45acc — sn_decision_table_decision_condition_2224ba663b8f4750d5260fa693e45acc (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `ba7957163bf6c310d5260fa693e45a38` vs target `4c0528763ba34b10916b37f726e45ab7`
+- `sn_decision_table_decision_condition` 7224fa663b8f4750d5260fa693e45a1d — sn_decision_table_decision_condition_7224fa663b8f4750d5260fa693e45a1d (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `c328af9e2bfa83104deaf02ac891bf92` vs target `49252cb63ba34b10916b37f726e45a21`
+- `sn_decision_table_decision_condition` b624fa663b8f4750d5260fa693e45a21 — sn_decision_table_decision_condition_b624fa663b8f4750d5260fa693e45a21 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `62286f9e2bfa83104deaf02ac891bf0f` vs target `f425e8b63ba34b10916b37f726e45a20`
+- `sn_decision_table_decision_condition` 7bcba6653bcf8b10d5260fa693e45ac7 — sn_decision_table_decision_condition_7bcba6653bcf8b10d5260fa693e45ac7 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `62286f9e2bfa83104deaf02ac891bf0f` vs target `f425e8b63ba34b10916b37f726e45a20`
+- `sn_decision_table_decision_condition` ebcba6653bcf8b10d5260fa693e45ab1 — sn_decision_table_decision_condition_ebcba6653bcf8b10d5260fa693e45ab1 (UPDATE-011-cpq-pricing-decision-tables.xml)
+  - `reference`: captured `62286f9e2bfa83104deaf02ac891bf0f` vs target `f425e8b63ba34b10916b37f726e45a20`
+- `sn_decision_table_decision_condition` 9356da903b0b4310d5260fa693e45a78 — sn_decision_table_decision_condition_9356da903b0b4310d5260fa693e45a78 (UPDATE-012-order-management-automation.xml)
+  - `reference`: captured `ba7957163bf6c310d5260fa693e45a38` vs target `4c0528763ba34b10916b37f726e45ab7`
+- `sn_decision_table_decision_condition` d356da903b0b4310d5260fa693e45a9c — sn_decision_table_decision_condition_d356da903b0b4310d5260fa693e45a9c (UPDATE-012-order-management-automation.xml)
+  - `reference`: captured `62286f9e2bfa83104deaf02ac891bf0f` vs target `f425e8b63ba34b10916b37f726e45a20`
+- `sys_hub_flow` 037f8a9c3b874310d5260fa693e45aa9 — Header tasks at submission for new add orders (UPDATE-012-order-management-automation.xml)
+  - `version_record`: captured `826f7a252b8b8b104deaf02ac891bfbe` vs target ``
+- `sys_hub_flow` 326aaa213bcf8b10d5260fa693e45ae0 — Top order line tasks for submission of Software Products (UPDATE-012-order-management-automation.xml)
+  - `version_record`: captured `7ceeeaed3bcf8b10d5260fa693e45ac8` vs target ``
+- `sys_hub_flow` 5355cba52bcb8b104deaf02ac891bfef — Header tasks post approval for add orders (UPDATE-012-order-management-automation.xml)
+  - `version_record`: captured `54c68fa92bcb8b104deaf02ac891bf45` vs target ``
+- `sys_report` 12797d642b53c3504deaf02ac891bf58 —  (UPDATE-016-workspace-landing-pages-dashboards.xml)
+  - `name`: captured `` vs target `Sales Lead Funnel 2`
+- `sys_report` ddfc41602b5b83504deaf02ac891bf7d — Sales Funnel Report (UPDATE-016-workspace-landing-pages-dashboards.xml)
+  - `roles`: captured `` vs target `snc_internal`
+- `sys_granular_delegate` c47c590e2b43cf104deaf02ac891bf9a — sys_granular_delegate_c47c590e2b43cf104deaf02ac891bf9a (UPDATE-022-audit-gap-fixes.xml)
+  - `delegate_notified`: captured `1` vs target `0`
+
+## uncaptured-missing-on-target
+
+- `sn_adv_appr_mgmt_approval_group` 54969ed03b0b4310d5260fa693e45a61 —  — source created 2026-08-27 21:57:03 by admin; updated 2026-08-27 21:57:03 by admin
+- `sn_adv_appr_mgmt_approval_group` d4165a903bc74310d5260fa693e45ae9 —  — source created 2026-08-27 21:54:56 by admin; updated 2026-08-27 21:54:56 by admin
+- `sys_decision_multi_result` 7e817a903b4f4310d5260fa693e45a58 —  — source created 2026-08-27 23:54:50 by admin; updated 2026-08-27 23:54:50 by admin
+- `sys_granular_delegate` 6c8c490e2b8f8f104deaf02ac891bfcd —  — source created 2026-09-02 03:03:33 by rebecca.smith; updated 2026-09-02 04:00:01 by admin
+- `sys_granular_delegate` f047594a2b03cf104deaf02ac891bf42 —  — source created 2026-09-02 03:49:45 by rebecca.smith; updated 2026-09-02 03:50:00 by admin
+- `sys_hub_flow` 0eacaed03b0f4310d5260fa693e45a6e — TEST Header tasks at submission for new add orders — source created 2026-08-27 23:33:29 by admin; updated 2026-08-28 00:23:47 by admin
+- `sys_hub_flow` 7f65a129936c0f90a3d9f66fa803d672 — Smart Prioritization: Update todo activities data on task/source_record updates — source created 2026-09-09 18:47:04 by admin; updated 2026-09-09 18:47:04 by admin
+- `sys_hub_flow` a45fc8652f56f254792ab14fafa4e3d1 — Employee Finder — source created 2026-09-09 18:47:21 by admin; updated 2026-09-09 18:47:21 by admin
+- `sys_hub_flow` c2f421e5936c0f90a3d9f66fa803d68c — Smart Prioritization: Update todos activity for non approval task — source created 2026-09-09 18:47:06 by admin; updated 2026-09-09 18:47:06 by admin
+- `sys_hub_flow` de5c3bdc2f100710c2c3724bcfa4e335 — Smart Prioritization: Delete todo activity data for non approval task — source created 2026-09-09 18:47:08 by admin; updated 2026-09-09 18:47:08 by admin
+- `sys_hub_flow` e0c5ed29936c0f90a3d9f66fa803d6c4 — Smart Prioritization: Update Todo activities data for Approvals — source created 2026-09-09 18:47:09 by admin; updated 2026-09-09 18:47:09 by admin
+- `sys_properties` 03a417a4ff970f1033ebffffffffffb1 — aiux.ainpx.tracing_enabled — source created 2026-09-10 07:26:01 by admin; updated 2026-09-10 07:26:01 by admin
+- `sys_properties` 090af020ffb00f10f079ffffffffff6f — sn_ex_ai_portal.request_summary_gen_mode — source created 2026-09-09 18:47:16 by admin; updated 2026-09-09 18:47:16 by admin
+- `sys_properties` 3809e04d472fcb109ada569fe16d4321 — sn_metadata_search.build_agent_last_active — source created 2026-09-23 18:25:10 by admin; updated 2026-10-07 22:08:36 by admin
+- `sys_properties` 6069e2ddff77b2109ed1ffffffffff74 — sn_ex_ai_portal.show_task_config_actions — source created 2026-09-09 18:46:38 by admin; updated 2026-09-09 18:46:38 by admin
+- `sys_properties` 66158db0c3670b100918dac4e4013194 — glide_encryption.set_value_support_cle.disabled — source created 2026-09-23 01:49:24 by admin; updated 2026-09-23 01:49:24 by admin
+- `sys_properties` 7028b18f3b56b210fbf9068aa4e45a9c — sn_ex_ai_portal.smartpriority_daily_assist_consumption_limit — source created 2026-09-09 18:47:16 by admin; updated 2026-09-09 18:47:16 by admin
+- `sys_properties` 81054d70c3670b100918dac4e4013164 — com.glide.encryption.is_ec_encryption_allowed — source created 2026-09-23 01:49:02 by admin; updated 2026-09-23 01:49:02 by admin
+- `sys_properties` 8205cd70c3670b100918dac4e40131cd — glide_encryption.enterprise_cle_license.hard_paywall_on — source created 2026-09-23 01:49:06 by admin; updated 2026-09-23 01:49:06 by admin
+- `sys_properties` a08966ddff77b2109ed1ffffffffffcc — sn_ex_ai_portal.show_ticket_config_actions — source created 2026-09-09 18:46:38 by admin; updated 2026-09-09 18:46:38 by admin
+- `sys_properties` ce05cd70c3670b100918dac4e40131cf — glide_encryption.cle_replatforming_with_kmf — source created 2026-09-23 01:49:06 by admin; updated 2026-09-23 01:49:06 by admin
+- `sys_properties` d8d1e394c3a743100918dac4e40131aa — sn_ai_governance.mcp_server_fixit_2026_Q1 — source created 2026-09-21 23:57:09 by admin; updated 2026-09-21 23:57:09 by admin
+- `sys_properties` e5c46cf72b5d0310bc4dfa97ce91bf58 — sn_ex_ai_portal.current_experience — source created 2026-09-09 18:46:38 by admin; updated 2026-09-09 18:46:38 by admin
+- `sys_properties` ebd93cecff700f10f079ffffffffff02 — sn_ex_ai_portal.task_insights_gen_mode — source created 2026-09-09 18:47:16 by admin; updated 2026-09-09 18:47:16 by admin
+- `sys_properties` f8e4b2c6ff963210f079ffffffffff53 — sn_ex_ai_portal.hide_topics_with_no_content — source created 2026-09-09 18:46:38 by admin; updated 2026-09-09 18:46:38 by admin
+- `sys_script` 1464d6987ba44b9bb2f06c5373ee033e — Update Module — source created 2026-09-25 16:30:26 by admin; updated 2026-09-25 16:30:26 by admin
+- `sys_script` 16eec2f34f566110b786fe29f7c71403 — Create work order for Order Task — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script` 1b2f2639c46c402bbae88c2339cad373 — Create Module — source created 2026-09-25 16:30:26 by admin; updated 2026-09-25 16:30:26 by admin
+- `sys_script` 1c0fe056072542cb890fc4fd805b9288 — Reject cross-scope collection variant of — source created 2026-08-26 20:00:00 by admin; updated 2026-08-26 20:00:00 by admin
+- `sys_script` 334d76faff7a0310dcdbffffffffffb5 — Trigger email for default DD scan — source created 2026-08-23 09:05:37 by admin; updated 2026-08-25 12:48:50 by admin
+- `sys_script` 3745bda221ea4f43a49a1a1a538fbc3b — Reject cross-scope extension of a non-ex — source created 2026-08-26 20:00:00 by admin; updated 2026-08-26 20:00:00 by admin
+- `sys_script` 3b39c0444f122110d4075f62f7c714cf — Work Order - Order Task Relation — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script` 52260803374a07105f39c8d734924bb9 — Add/Update Child Topics Template Mapping — source created 2026-09-09 18:46:39 by admin; updated 2026-09-09 18:46:39 by admin
+- `sys_script` 55a799e5ff0b4310ec57ffffffffff50 — Prevent null sys_og_routing_context — source created 2026-08-31 14:34:28 by admin; updated 2026-08-31 14:34:56 by admin
+- `sys_script` 641096374f566110b786fe29f7c71469 — Validate Open Work Orders — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script` 6e801e374f566110b786fe29f7c714f8 — Update Order Task with Work Order change — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script` a1b2c3d4370687105f3961d734924bcd — Handle Topic Hierarchy Change Template — source created 2026-09-09 18:46:39 by admin; updated 2026-09-09 18:46:39 by admin
+- `sys_script` d8e9fab54f566110b786fe29f7c71d06 — Populate Work Order Templates for Order  — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script` dd5d74f9ee9f45f296f06b53d93930ab — Reject cross-scope route map onto a non- — source created 2026-08-26 20:00:00 by admin; updated 2026-08-26 20:00:00 by admin
+- `sys_script` e603dbad370687105f3961d734924bbd — Prevent duplicate topic template mapping — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script` eb8d34c7cc5645cda242cf5f314bbc58 — Log Task Changes — source created 2026-08-27 04:54:26 by admin; updated 2026-08-27 04:54:26 by admin
+- `sys_script` fce0d16a4fba6110b786fe29f7c71483 — Update Work Order for inflight change — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script` ff6bbd2e615946c08c17c2b194b57c29 — Log Configuration Changes — source created 2026-08-27 04:54:26 by admin; updated 2026-08-27 04:54:26 by admin
+- `sys_script_client` 101eb81c4d12b1d796718b616e32cd4a — Update fields visibility on applies_to — source created 2026-09-09 18:46:15 by admin; updated 2026-09-09 18:46:15 by admin
+- `sys_script_client` 8ab2798dffbb32106c6bffffffffff7b — Validate End date — source created 2026-09-09 18:46:39 by admin; updated 2026-09-09 18:46:39 by admin
+- `sys_script_client` ea8c9d99fffb72106c6bffffffffffb6 — Auto fill end date as start date — source created 2026-09-09 18:46:39 by admin; updated 2026-09-09 18:46:39 by admin
+- `sys_script_include` 0440056dffdef610f2ebffffffffff00 — EmployeeProfileUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 1135d709cf758b50a25df94d3d851c47 — QuickLinksConfigUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 128332d5ff2ef210b0deffffffffff66 — ActivityHubUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 1b395fb353e10710f2ebffc230e5e689 — ExploreTopicsUtilsSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 22be093dffb732107684ffffffffffb1 — HolidayUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 2770dd3dffb732107684ffffffffff55 — HolidayUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 2b12687f2b5d0310bc4dfa97ce91bf8e — NotificationContributorAggregator — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 2fe6f6f3373583105f3961d734924be3 — SupportResourceUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 3612687f2b5d0310bc4dfa97ce91bf8b — ItsmNotificationContributor — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 3b1a815337127210b0de144c24924b8f — ActivityHubUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 4570056dffdef610f2ebffffffffff07 — EmployeeProfileUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 45bb5228e73d4be48362c05805e63fc5 — ESNotificationStyle — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 45cd46b34f566110b786fe29f7c714cf — FSMIntegrationUtil — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script_include` 48d670efff56b6106d14ffffffffff70 — PopularContentUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 55fa4c0a3b1d431060d86c1c95e45a44 — ExperienceSuffixResolver — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 59cb46334f566110b786fe29f7c714bd — FSMIntegrationUtilOOB — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script_include` 5cff1fed370203105f39c8d734924be1 — TopicTemplateUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 61deec253bdd031060d86c1c95e45adb — NotificationPreviewListTransformBuilder — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 65551b09cf758b50a25df94d3d851c24 — QuickLinksConfigUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 67a27efb37f183105f3961d734924b2f — SupportResourceUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 760f93ad370203105f39c8d734924b4d — TopicTemplateUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` 854166e68324484fa918a60398f0795d — AIXUserPreferenceAPI — source created 2026-09-10 00:00:00 by admin; updated 2026-09-10 00:00:00 by admin
+- `sys_script_include` 909a0aff4f166110b786fe29f7c7146e — FSMIntegrationDAO — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_script_include` 9a12687f2b5d0310bc4dfa97ce91bf89 — NotificationContributorBase — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` a7c5e2d1ff9e3210f4a0fffffffffff1 — TopicPromptsUtil — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` b8d6f3e2ff9e3210f4a0fffffffffff2 — TopicPromptsUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` ba86450f185b3e54f8778cc54cb054b6 — AIUXAdminSetupAPI — source created 2026-09-09 18:44:55 by admin; updated 2026-09-09 18:44:55 by admin
+- `sys_script_include` cff85fb353e10710f2ebffc230e5e649 — ExploreTopicsUtils — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` e28518c8ff4443109728ffffffffff40 — ServicePortalRedirectionEnabledTablesDefault — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` eafd513dff3843101a7fffffffffff00 — ActivityHubListConfigurationUtils — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` f0c46cf72b5d0310bc4dfa97ce91bf55 — NotificationSwitchService — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_script_include` f394be9bffd2f2106d14ffffffffffdc — PopularContentUtilSNC — source created 2026-09-09 18:46:40 by admin; updated 2026-09-09 18:46:40 by admin
+- `sys_ui_action` b784567b4f566110b786fe29f7c71462 — Create work order — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_ui_policy` e221b9c9ffbb32106c6bffffffffffcd — End date is disabled until start date is specified — source created 2026-09-09 18:46:48 by admin; updated 2026-09-09 18:46:48 by admin
+- `sys_ui_section` 2fbe56283752c7105f39c8d734924b4e — sn_ex_ai_portal_m2m_topic_template — source created 2026-09-09 18:46:48 by admin; updated 2026-09-09 18:46:48 by admin
+- `sys_ui_section` 47c7b1503bcf0310d5260fa693e45ab1 — customer_contact — source created 2026-08-27 19:42:32 by admin; updated 2026-08-27 19:42:32 by admin
+- `sys_ui_section` 4d678e253b4b8b10d5260fa693e45a6c — fx_rate — source created 2026-08-31 18:03:05 by admin; updated 2026-08-31 18:03:05 by admin
+- `sys_ui_section` 767d26003bc38f10d5260fa693e45a29 — x_snc_change_log_0_log — source created 2026-08-27 04:58:36 by admin; updated 2026-08-27 04:58:36 by admin
+- `sys_ui_section` a8eeddc9ff3b32106c6bffffffffff9e — sn_ex_ai_portal_holiday_calendar — source created 2026-09-09 18:46:48 by admin; updated 2026-09-09 18:46:48 by admin
+- `sys_ui_section` ac05804e2b438f104deaf02ac891bf5c — sys_mutex — source created 2026-09-01 21:50:23 by admin; updated 2026-09-01 21:50:23 by admin
+- `sys_ui_section` f235eb05ff12c750f2ebffffffffffa7 — sn_ex_ai_portal_topic_prompts — source created 2026-09-09 18:46:48 by admin; updated 2026-09-09 18:46:48 by admin
+- `sys_ui_view` 2c6509b4c3670b100918dac4e4013100 — RPTd2c00800c330020050da1a4112d3ae08 — source created 2026-09-23 01:50:38 by admin; updated 2026-09-23 01:50:38 by admin
+- `sys_ui_view` 3ba3157847630b109ada569fe16d437f — calendar — source created 2026-09-23 02:53:07 by admin; updated 2026-09-23 02:53:07 by admin
+- `sys_ui_view` 6e658db4c3670b100918dac4e40131de — fsmcp — source created 2026-09-23 01:50:47 by admin; updated 2026-09-23 01:50:47 by admin
+- `sys_ui_view` 7919c5fc47a7c7109ada569fe16d43cc — workspace_apw_default — source created 2026-09-23 02:06:50 by admin; updated 2026-09-23 02:06:50 by admin
+- `sys_ui_view` a0b3597847630b109ada569fe16d43f0 — acc_onb_tech_import_task_view — source created 2026-09-23 02:53:09 by admin; updated 2026-09-23 02:53:09 by admin
+- `sys_ui_view` a465c5b4c3670b100918dac4e40131ee — RPT1560c400c330020050da1a4112d3ae67 — source created 2026-09-23 01:50:38 by admin; updated 2026-09-23 01:50:38 by admin
+- `sys_ui_view` bdd5cd3cc3670b100918dac4e40131fc — field_services — source created 2026-09-23 01:52:38 by admin; updated 2026-09-23 01:52:38 by admin
+- `sys_ui_view` c4c315f847630b109ada569fe16d43da — tech_pad_list_view — source created 2026-09-23 02:53:24 by admin; updated 2026-09-23 02:53:24 by admin
+- `sys_ui_view` d0a1913447efc7109ada569fe16d439b — dpr_phase_view — source created 2026-09-23 02:44:08 by admin; updated 2026-09-23 02:44:08 by admin
+- `sys_ui_view` d98211f047230b109ada569fe16d4372 — dpr_task_panel_view — source created 2026-09-23 02:48:01 by admin; updated 2026-09-23 02:48:01 by admin
+- `sys_user_role_contains` 0f8b8f4d4f0261107bd85f62f7c714a3 —  — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_user_role_contains` 301be9923ffb7210860f2248001f8bb9 —  — source created 2026-09-09 18:46:48 by admin; updated 2026-09-09 18:46:48 by admin
+- `sys_user_role_contains` 928b8ee6ffcc0310f2ebffffffffff4d —  — source created 2026-09-09 18:46:49 by admin; updated 2026-09-09 18:46:49 by admin
+- `sys_user_role_contains` 9a9b8ee6ffcc0310f2ebffffffffff52 —  — source created 2026-09-09 18:46:51 by admin; updated 2026-09-09 18:46:51 by admin
+- `sys_user_role_contains` f75b0f4d4f0261107bd85f62f7c7142a —  — source created 2026-09-23 01:56:17 by admin; updated 2026-09-23 01:56:17 by admin
+- `sys_ux_client_script` 03f1dba92fa903104eb86841bea4e38d — openConfirmSwitchModal — source created 2026-09-09 18:47:22 by admin; updated 2026-09-09 18:47:22 by admin
+- `sys_ux_client_script` 1c5a8fd32b5507d0ca0efd806e91bf7e — openEmailPreviews — source created 2026-09-09 18:47:22 by admin; updated 2026-09-09 18:47:22 by admin
+- `sys_ux_client_script` 25f01aba18dbba54f8778cc54cb054a0 — navigateToXCCHome — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` 2bb9b917183ffa98f8778cc54cb0545e — skipSearchSourceCreation — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` 2ff9247918373e58f8778cc54cb054a0 — eventHandler — source created 2026-09-09 18:44:58 by admin; updated 2026-09-09 18:44:58 by admin
+- `sys_ux_client_script` 305700df181bbe54f8778cc54cb05425 — eventHandler — source created 2026-09-09 18:44:55 by admin; updated 2026-09-09 18:44:55 by admin
+- `sys_ux_client_script` 33c22c0718d33e54f8778cc54cb05486 — pageLoadHandler — source created 2026-09-09 18:44:56 by admin; updated 2026-09-09 18:44:56 by admin
+- `sys_ux_client_script` 3a6a1a55fb2dc31094a1fbf16eefdc83 — openRecord — source created 2026-09-09 18:47:22 by admin; updated 2026-09-09 18:47:22 by admin
+- `sys_ux_client_script` 5092810018fffa18f8778cc54cb0546b — eventHandler — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` 65dd68613bdd031060d86c1c95e45a44 — fetchNotificationPreviewRecord — source created 2026-09-09 18:47:22 by admin; updated 2026-09-09 18:47:22 by admin
+- `sys_ux_client_script` 6cc17c9c004c8310f8777de7c809eb55 — setSearchProfileId — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` 7c499a5c2b2143107e50f93a5e91bf1f — resolveExperienceId — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sys_ux_client_script` 7e135415182f72d4f8778cc54cb054dd — pageLoadHandler — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` c88cbba2183f7698f8778cc54cb05420 — createAndLinkSearchSource — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` ec221fe118bbfa58f8778cc54cb05465 — setImagePayload — source created 2026-09-09 18:44:58 by admin; updated 2026-09-09 18:44:58 by admin
+- `sys_ux_client_script` eca133b618dbfa54f8778cc54cb054ba — navigateToChooseSource — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` f0c17c9c004c8310f8777de7c809eb67 — handleConnectionNavigation — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_client_script` f634f40618ffbe58f8778cc54cb054ef — pageLoadHandler — source created 2026-09-09 18:44:58 by admin; updated 2026-09-09 18:44:58 by admin
+- `sys_ux_event` 1bf9a83a898d1baabcabbc107b1facfa —  — source created 2026-09-11 01:38:00 by tectonic; updated 2026-09-11 01:38:00 by tectonic
+- `sys_ux_event` 27fc485b183fba98f8778cc54cb0542b —  — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_event` 6035c5d4f26faa403cdf9b9e83458a02 —  — source created 2026-08-27 11:06:29 by tectonic; updated 2026-08-27 11:06:29 by tectonic
+- `sys_ux_event` 608e318f2bd8f75d360b1bf2c7d2c809 —  — source created 2026-09-11 01:38:13 by tectonic; updated 2026-09-11 01:38:13 by tectonic
+- `sys_ux_event` 8a1ab4d28a2f7666aea6bb20cd3288c1 —  — source created 2026-09-11 01:38:00 by tectonic; updated 2026-09-11 01:38:00 by tectonic
+- `sys_ux_event` c6217dde5e6498b3efa9f4a18b108f7a —  — source created 2026-09-11 01:38:13 by tectonic; updated 2026-09-11 01:38:13 by tectonic
+- `sys_ux_event` ddf14b17f3cc0f264135423e9fbc8811 —  — source created 2026-09-22 07:14:08 by tectonic; updated 2026-09-22 07:14:08 by tectonic
+- `sys_ux_macroponent` 0d1153fe1492d6ef880c381b25957633 — sn-wdf-unified-hub-404-page — source created 2026-09-11 02:38:15 by tectonic; updated 2026-09-11 02:38:15 by tectonic
+- `sys_ux_macroponent` 1efa885e18474bbebf524ce11530cf80 — sn-par-breakdown-relation — source created 2026-09-09 19:07:55 by tectonic; updated 2026-09-09 19:07:55 by tectonic
+- `sys_ux_macroponent` 2a21b9a0d934acb8ecd7ced56a1c160b — sn-par-highlight-field — source created 2026-09-09 19:08:15 by tectonic; updated 2026-09-09 19:08:15 by tectonic
+- `sys_ux_macroponent` 39f446c0187b3e18f8778cc54cb0546c — Default — source created 2026-09-09 18:44:58 by admin; updated 2026-09-09 18:44:58 by admin
+- `sys_ux_macroponent` 401b992759c1606915fe2522dc5c08e7 — sn-embeddables-base — source created 2026-09-25 16:29:41 by tectonic; updated 2026-09-25 16:29:41 by tectonic
+- `sys_ux_macroponent` 5fc47bbd1857b254f8778cc54cb05426 — External Sources Home IA — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_macroponent` 6ac9b35e8ae00cf74ff3c52fad1d63e8 — SN Seismic Karuna Widget — source created 2026-09-11 18:14:44 by tectonic; updated 2026-09-11 18:14:44 by tectonic
+- `sys_ux_macroponent` 6d78b91e0bdd8fe5b0d7ed5e11d02e56 — SN Seismic AIUX Widget — source created 2026-09-09 18:44:57 by tectonic; updated 2026-09-09 18:44:57 by tectonic
+- `sys_ux_macroponent` 7d0606a60f50bacb97befbd78181395b — sn-on-call-calendar-row-title — source created 2026-08-27 11:06:29 by tectonic; updated 2026-08-27 11:06:29 by tectonic
+- `sys_ux_macroponent` 7ec9a49118dffa14f8778cc54cb05453 — Default — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_macroponent` 92f999b402d5bc5bf40e2e6ea92217b0 — aiux-lit-xcc-renderer — source created 2026-09-09 18:44:57 by tectonic; updated 2026-09-09 18:44:57 by tectonic
+- `sys_ux_macroponent` 967dd0e3ffa732104cb2fffffffffffd — aiux-lit-renderer — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_macroponent` 9b1a14253b1d031060d86c1c95e45a44 — ES email notifications default — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sys_ux_macroponent` ac7f6844c85ffef3b5a43c3eded20ee7 — sn-wdf-credits-landing-page — source created 2026-09-11 02:38:23 by tectonic; updated 2026-09-11 02:38:23 by tectonic
+- `sys_ux_macroponent` cfbb11e8c0638d22f0dc8ff1342218bd — sn-text2analytics-vis — source created 2026-08-26 01:41:10 by tectonic; updated 2026-08-26 01:41:10 by tectonic
+- `sys_ux_macroponent` d8efcaf618dbba54f8778cc54cb05472 — IA external soruces home — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_macroponent` de365dc9e236b4e5869f0d71b2411335 — sn-on-call-calendar-span — source created 2026-08-27 11:06:29 by tectonic; updated 2026-08-27 11:06:29 by tectonic
+- `sys_ux_macroponent` e5e2d781807827f2759065511f3cf4b5 — sn-wdf-hub-sidebar — source created 2026-09-11 02:38:15 by tectonic; updated 2026-09-11 02:38:15 by tectonic
+- `sys_ux_macroponent` ea209b1c27bbac1f8d26974868544289 — sn-text2analytics-activation — source created 2026-08-26 01:41:11 by tectonic; updated 2026-08-26 01:41:11 by tectonic
+- `sys_ux_page_property` 2359e45118dffa14f8778cc54cb0540d — chrome_footer — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_page_property` af59a45118dffa14f8778cc54cb054b0 — chrome_header — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_page_property` b7877fd618e77ed4f8778cc54cb054de — globalSearchDataConfigId — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_page_registry` 075920d9189ffa14f8778cc54cb0543b —  — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_screen` 10efcaf618dbba54f8778cc54cb0547d — Default — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_screen` 35f446c0187b3e18f8778cc54cb05476 — Default — source created 2026-09-09 18:44:58 by admin; updated 2026-09-09 18:44:58 by admin
+- `sys_ux_screen` 5bc47bbd1857b254f8778cc54cb05448 — Default — source created 2026-09-09 18:44:59 by admin; updated 2026-09-09 18:44:59 by admin
+- `sys_ux_screen` af1a14253b1d031060d86c1c95e45ac3 — ES email notifications default — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sys_ux_screen` b2c9a49118dffa14f8778cc54cb0546a — Default — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sys_ux_screen` d27d14e3ffa732104cb2ffffffffff06 — Default — source created 2026-09-09 18:44:57 by admin; updated 2026-09-09 18:44:57 by admin
+- `sysevent_email_action` 31f0bc3f33d14310081da0ac4f5c7bea — ES - Incident was opened — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sysevent_email_action` 39f0bc3f33d14310081da0ac4f5c7bec — ES - Comment left on incident — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sysevent_email_action` 3df0bc3f33d14310081da0ac4f5c7be8 — ES - Request Rejected — source created 2026-09-09 18:47:24 by admin; updated 2026-09-09 18:47:24 by admin
+- `sysevent_email_action` 4d654bbeffba0310dcdbffffffffffdc — Sensitive Data Visibility Report — source created 2026-08-23 09:31:42 by admin; updated 2026-08-25 12:50:59 by admin
+- `sysevent_email_action` 75f0bc3f33d14310081da0ac4f5c7bea — ES - Incident closed — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sysevent_email_action` 79f0bc3f33d14310081da0ac4f5c7beb — ES - Request completed — source created 2026-09-09 18:47:24 by admin; updated 2026-09-09 18:47:24 by admin
+- `sysevent_email_action` b5f0bc3f33d14310081da0ac4f5c7be9 — ES - Incident resolved — source created 2026-09-09 18:47:23 by admin; updated 2026-09-09 18:47:23 by admin
+- `sysevent_email_action` b9f0bc3f33d14310081da0ac4f5c7bea — ES - Request Item Delivery — source created 2026-09-09 18:47:24 by admin; updated 2026-09-09 18:47:24 by admin
+- `sysevent_email_action` f1f0bc3f33d14310081da0ac4f5c7bec — ES - Request approved — source created 2026-09-09 18:47:24 by admin; updated 2026-09-09 18:47:24 by admin
+- `sysevent_email_action` f5f0bc3f33d14310081da0ac4f5c7be8 — ES - Request was opened — source created 2026-09-09 18:47:24 by admin; updated 2026-09-09 18:47:24 by admin
+- `sysevent_email_action` fdf0bc3f33d14310081da0ac4f5c7bea — ES - Comment left on request — source created 2026-09-09 18:47:24 by admin; updated 2026-09-09 18:47:24 by admin
+
+## unreadable-table (Table API refused; not verified)
+
+- `sys_ui_form_sections` UPDATE-007-quote-defaulting-automation.xml Error: Query sys_ui_form_sections failed: 400 {"error":{"message":"Invalid table sys_ui_form_sections","detail":null},"status":"failure"}
+- `sys_client_script`  source Error: 400
+- `sys_ui_form_sections`  source Error: 400
+
+## not checkable (no sys_id in payload)
+
+- UPDATE-004-crm-custom-fields-and-choices.xml: sys_choice_customer_account_u_market_segment
+- UPDATE-004-crm-custom-fields-and-choices.xml: sys_choice_sn_quote_mgmt_core_quote_route_to_market
+- UPDATE-008-account-actions-and-forms.xml: sys_ui_related_customer_account_test
+- UPDATE-008-account-actions-and-forms.xml: sys_ui_related_customer_account_workspace
+- UPDATE-011-cpq-pricing-decision-tables.xml: sys_choice_var__m_sys_decision_multi_result_element_6bb03e662b8347504deaf02ac891bf1a_header_price_list_type
+- UPDATE-011-cpq-pricing-decision-tables.xml: sys_choice_var__m_sys_decision_multi_result_element_e32d88982b9f8f104deaf02ac891bf13_header_price_list_type
+- UPDATE-011-cpq-pricing-decision-tables.xml: sys_choice_var__m_sys_decision_multi_result_element_5d8794f9ff923610998fffffffffff16_scope
+- UPDATE-014-partner-segmentation.xml: sys_ui_related_sn_prm_channel_partner_sales

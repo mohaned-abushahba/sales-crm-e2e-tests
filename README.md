@@ -33,3 +33,12 @@ demo data.
 - `CATALOG.md` — every flow, its spec, status, and last verified date. Check here first.
 - `FLOWS.md` — what each demo scene does and what "correct" looks like, with findings per instance.
 - `TESTING-STRATEGY.md` — conventions, locator patterns, and instance quirks.
+
+## Config drift check
+
+`tests/config-drift.spec.ts` compares the target instance against the golden-demo update sets
+(`../sales-crm-golden-demo/update-sets`, override with `UPDATE_SETS_DIR`) and against the source
+instance in `.env` (override with `SOURCE_ENV_FILE`). Read-only. Run it alone with
+`E2E_ENV_FILE=.env.<target> npx playwright test tests/config-drift.spec.ts` (~15 min). Findings go to
+`drift-reports/drift-<instance>-<date>.md`. Known per-instance differences are filtered in
+`utils/drift.ts` (`isKnownBenign`); plugin-install batches are filtered in Layer 2.

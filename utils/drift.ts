@@ -125,7 +125,11 @@ export function loadCapturedRecords(updateSetsDir: string): { records: CapturedR
       out.push({ updateSet: file, table: parsed.table, sysId, label, action, fields });
     }
   }
-  return { records: out, skipped };
+  // Later update sets supersede earlier ones for the same record (e.g. UPDATE-022 re-captures the
+  // portal logo from UPDATE-003); only the last capture says what the instance should look like.
+  const latest = new Map<string, CapturedRecord>();
+  for (const r of out) latest.set(`${r.table}:${r.sysId}`, r);
+  return { records: [...latest.values()], skipped };
 }
 
 function norm(v: unknown): string {
@@ -162,4 +166,32 @@ export function diffFields(captured: Record<string, string>, actual: Record<stri
 export function truncate(s: string, n = 120): string {
   const one = s.replace(/\s+/g, ' ');
   return one.length > n ? `${one.slice(0, n)}…(${s.length} chars)` : one;
+}
+
+/**
+ * Differences that are known not to be drift. Each one was checked against both instances.
+ * - OOB reference fields point at a record whose sys_id is generated per instance (same name and
+ *   label on both), so the captured sys_id can never match.
+ * - sys_dictionary.attributes: stage adds edge_encryption_enabled=true on top of the captured value.
+ * - sys_hub_flow.version_record: points at a flow version row that is per instance.
+ */
+export function isKnownBenign(table: string, d: FieldDiff): boolean {
+  const key = `${table}.${d.field}`;
+  if (
+    key === 'sn_decision_table_decision_condition.reference' ||
+    key === 'sys_db_object.super_class' ||
+    key === 'sys_hub_flow.version_record' ||
+    key === 'sys_granular_delegate.delegate_notified' // runtime flag flipped when the delegate is notified
+  ) {
+    return true;
+  }
+  if (key === 'sys_dictionary.attributes') {
+    const rest = d.actual
+      .split(',')
+      .filter((a) => a !== 'edge_encryption_enabled=true' && a !== 'encode_utf8=false')
+      .join(',');
+    const want = d.captured.split(',').filter((a) => a !== 'encode_utf8=false').join(',');
+    return rest === want;
+  }
+  return false;
 }

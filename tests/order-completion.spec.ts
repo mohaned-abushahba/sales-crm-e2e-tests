@@ -124,34 +124,48 @@ test.describe('Order Completion & Fulfillment', () => {
       .poll(async () => (await snGet('sn_ind_tmt_orm_order', orderSysId!, 'state')).state, { timeout: 15_000 })
       .toBe('Submitted');
 
-    // Order Tasks are generated one at a time after submission, so "> 0" isn't the final set —
-    // wait until the count holds steady across consecutive reads. Closing only the first one
-    // leaves the rest open, and the line's Completed save then can't roll the order up ("The
-    // order can't be completed because one or more order header or top line item tasks are
-    // still open").
-    let tasks: Record<string, any>[] = [];
-    let previousCount = -1;
+    // Order Tasks are generated one at a time after submission, and new ones can keep
+    // appearing even after an earlier batch looks "settled" — closing a batch, then finding
+    // more were created while we were closing it. Loop until a fresh query turns up nothing
+    // left open, instead of trusting one settle window. Closing only a partial set leaves the
+    // rest open, and the line's Completed save then can't roll the order up ("The order can't
+    // be completed because one or more order header or top line item tasks are still open").
+    // Query by the raw choice value (5 = Closed complete) — sysparm_query's "!=" does not
+    // resolve choice labels the way "=" does, so a label-based filter here silently matches
+    // nothing even when open tasks exist.
+    const CLOSED_COMPLETE = '5';
+    const closedTaskIds = new Set<string>();
     await expect
       .poll(
         async () => {
-          tasks = await snQuery('sn_ind_tmt_orm_order_task', `customer_order=${orderSysId}`, 'sys_id');
-          const settled = tasks.length > 0 && tasks.length === previousCount;
-          previousCount = tasks.length;
-          return settled;
+          const tasks = await snQuery(
+            'sn_ind_tmt_orm_order_task',
+            `customer_order=${orderSysId}^state!=${CLOSED_COMPLETE}`,
+            'sys_id'
+          );
+          for (const t of tasks) {
+            if (closedTaskIds.has(t.sys_id)) continue;
+            await page.goto(`/now/cwf/agent/record/sn_ind_tmt_orm_order_task/${t.sys_id}/params/list_id/undefined`);
+            const closeButton = page.getByRole('button', { name: 'Close', exact: true });
+            await closeButton.waitFor();
+            await closeButton.click();
+            await expect
+              .poll(async () => (await snGet('sn_ind_tmt_orm_order_task', t.sys_id, 'state')).state, {
+                timeout: 15_000,
+              })
+              .toBe('Closed complete');
+            closedTaskIds.add(t.sys_id);
+          }
+          const remaining = await snQuery(
+            'sn_ind_tmt_orm_order_task',
+            `customer_order=${orderSysId}^state!=${CLOSED_COMPLETE}`,
+            'sys_id'
+          );
+          return closedTaskIds.size > 0 && remaining.length === 0;
         },
         { timeout: 60_000, intervals: [5_000] }
       )
       .toBe(true);
-    // Close every task via its own record's header "Close" button (Scene 3.4's mechanism).
-    for (const t of tasks) {
-      await page.goto(`/now/cwf/agent/record/sn_ind_tmt_orm_order_task/${t.sys_id}/params/list_id/undefined`);
-      const closeButton = page.getByRole('button', { name: 'Close', exact: true });
-      await closeButton.waitFor();
-      await closeButton.click();
-      await expect
-        .poll(async () => (await snGet('sn_ind_tmt_orm_order_task', t.sys_id, 'state')).state, { timeout: 15_000 })
-        .toBe('Closed complete');
-    }
 
     await page.goto(`/now/cwf/agent/record/sn_ind_tmt_orm_order/${orderSysId}/params/list_id/undefined`);
     const approveButton = page.getByRole('button', { name: 'Approve', exact: true });

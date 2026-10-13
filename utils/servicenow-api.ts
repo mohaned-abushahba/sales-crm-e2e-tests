@@ -3,8 +3,8 @@ import * as dotenv from 'dotenv';
 dotenv.config({ path: `./${process.env.E2E_ENV_FILE ?? '.env'}`, override: true });
 
 const baseURL = (process.env.SERVICENOW_INSTANCE_URL ?? '').replace(/\/$/, '');
-const username = process.env.SERVICENOW_USERNAME ?? '';
-const password = process.env.SERVICENOW_PASSWORD ?? '';
+const username = process.env.SERVICENOW_API_USERNAME ?? process.env.SERVICENOW_USERNAME ?? '';
+const password = process.env.SERVICENOW_API_PASSWORD ?? process.env.SERVICENOW_PASSWORD ?? '';
 
 function authHeader(): string {
   return 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64');

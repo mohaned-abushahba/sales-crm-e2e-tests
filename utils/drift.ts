@@ -115,6 +115,12 @@ export function loadCapturedRecords(updateSetsDir: string): { records: CapturedR
       if (!payloadRaw) continue;
       const parsed = parsePayloadFields(unwrap(payloadRaw));
       if (!parsed) continue;
+      // sys_ui_form_sections is a grouping wrapper keyed by form id, not a table: its rows are
+      // sys_ui_form_section records with no sys_id of their own, so it can't be checked per record.
+      if (parsed.table === 'sys_ui_form_sections') {
+        skipped.push(`${file}: ${label}`);
+        continue;
+      }
       const sysId = parsed.fields['sys_id'] ?? label.match(/([0-9a-f]{32})$/)?.[1];
       if (!sysId) {
         skipped.push(`${file}: ${label}`);
